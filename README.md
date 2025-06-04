@@ -26,7 +26,7 @@ To revise and master Django development concept-by-concept, followed by creating
    ```bash
    git clone https://github.com/jainharsh524/djangoRevision.git
    cd djangoRevision
-    ```
+   ```
 
 2. **Create and activate virtual environment:**
 
@@ -60,8 +60,15 @@ To revise and master Django development concept-by-concept, followed by creating
 | Chapter | Topic                          | Status      |
 | ------- | ------------------------------ | ----------- |
 | 1       | Django Introduction & Setup    | ✅ Done      |
-| 2       | Creating Your First Django App | 🔜 Upcoming |
-| ...     | ...                            | ...         |
+| 2       | Creating Your First Django App | ✅ Done      |
+| 3       | Views and URLs                 | ✅ Done      |
+| 4       | Templates & Rendering HTML     | 🔜 Upcoming |
+| 5       | Static Files (CSS/JS/Images)   | ⏳ Pending   |
+| 6       | Models and Database (SQLite3)  | ⏳ Pending   |
+| 7       | Admin Panel Customization      | ⏳ Pending   |
+| 8       | Forms and User Input           | ⏳ Pending   |
+| 9       | User Authentication            | ⏳ Pending   |
+| 10      | Final Project Build            | ⏳ Pending   |
 
 ---
 
@@ -80,3 +87,18 @@ GitHub: [@jainharsh524](https://github.com/jainharsh524)
 ---
 
 ## ⭐ Star the repo if you find it helpful!
+
+````
+
+---
+
+### ✅ Next Steps
+
+1. Open `README.md` in your repo.
+2. Replace the old content with this one.
+3. Save and commit:
+   ```bash
+   git add README.md
+   git commit -m "Update README with Chapter 3 progress"
+   git push
+````
