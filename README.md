@@ -87,18 +87,3 @@ GitHub: [@jainharsh524](https://github.com/jainharsh524)
 ---
 
 ## ⭐ Star the repo if you find it helpful!
-
-````
-
----
-
-### ✅ Next Steps
-
-1. Open `README.md` in your repo.
-2. Replace the old content with this one.
-3. Save and commit:
-   ```bash
-   git add README.md
-   git commit -m "Update README with Chapter 3 progress"
-   git push
-````
