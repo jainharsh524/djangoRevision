@@ -77,11 +77,139 @@ Here’s what’s happening:
 | `render()`     | Renders an HTML template with dynamic data | `render(request, 'home.html', {'name': 'Harsh'})` |
 
 ---
+Absolutely, Harsh! Let’s **dive deep into** two of the most important concepts in Django routing:
 
-## 🔁 Full Workflow Summary
+---
 
-```text
-User -> URL (request) → Project's urls.py → App's urls.py → views.py → HttpResponse or render() → Browser
+## 🔍 1. `path()` – The URL Routing System
+
+### ✅ Purpose:
+
+The `path()` function **maps URLs to views** — it's how Django knows *which function to run* when a user visits a URL.
+
+---
+
+### 🧱 Syntax:
+
+```python
+path('route/', view_function, name='optional_name')
+```
+
+| Component       | Meaning                                                                 |
+| --------------- | ----------------------------------------------------------------------- |
+| `'route/'`      | URL pattern, e.g., `'about/'`, `'products/<int:id>/'`, or `''` for root |
+| `view_function` | Python function (usually from `views.py`) that returns a response       |
+| `name`          | Optional alias to refer to the path elsewhere (like in templates)       |
+
+---
+
+### 💡 Example:
+
+```python
+# myapp/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),            # http://localhost:8000/
+    path('about/', views.about, name='about'),    # http://localhost:8000/about/
+]
+```
+
+In this example:
+
+* `'about/'` maps to the function `about()` in `views.py`.
+* `'name'` helps with things like `{% url 'about' %}` in templates.
+
+---
+
+### 🔁 Dynamic Routing with Parameters
+
+You can pass variables from the URL to the view:
+
+```python
+path('user/<int:id>/', views.profile, name='user-profile')
+```
+
+Then in your view:
+
+```python
+def profile(request, id):
+    return HttpResponse(f"User ID is {id}")
+```
+
+---
+
+## 🧠 2. `request` – The User’s Input to Your View
+
+### ✅ Purpose:
+
+The `request` object carries **all the data sent by the user**: URL, query parameters, headers, form data, user info, etc.
+
+---
+
+### 🌐 What’s in a Request?
+
+Django automatically passes a `request` object to your view function:
+
+```python
+def home(request):
+    ...
+```
+
+You can access:
+
+| Attribute        | Purpose                        | Example                               |
+| ---------------- | ------------------------------ | ------------------------------------- |
+| `request.method` | HTTP method (GET, POST, etc.)  | `'GET'` or `'POST'`                   |
+| `request.GET`    | Query parameters (in URL)      | `?name=harsh` → `request.GET['name']` |
+| `request.POST`   | Form data (in POST body)       | `request.POST['username']`            |
+| `request.user`   | Logged-in user (if using auth) | `request.user.username`               |
+| `request.path`   | The full URL path              | `'/about/'`                           |
+| `request.META`   | Headers & environment info     | `request.META['HTTP_USER_AGENT']`     |
+
+---
+
+### 📦 Example: GET Request with Query Params
+
+URL:
+
+```
+http://localhost:8000/greet/?name=Harsh
+```
+
+`urls.py`:
+
+```python
+path('greet/', views.greet, name='greet')
+```
+
+`views.py`:
+
+```python
+def greet(request):
+    name = request.GET.get('name', 'Guest')  # fallback to 'Guest'
+    return HttpResponse(f"Hello, {name}!")
+```
+
+---
+
+### 🚨 Common Mistakes
+
+* Forgetting to **include** the app’s `urls.py` in the **main project** `urls.py`
+* Using `request.GET['key']` without checking if the key exists (use `.get()` safely!)
+* Confusing `path()` (Django URL routing) with file system paths
+
+---
+
+## 🧭 Summary Diagram
+
+```
+Browser → URL (e.g., /about/) 
+      → Project urls.py (routes to app urls.py) 
+          → path('about/', views.about)
+              → about(request)
+                  → HttpResponse("About page")
 ```
 
 ---
