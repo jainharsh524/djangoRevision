@@ -10,4 +10,7 @@ def test(request, id, name):
 def batch(request, className):
     return HttpResponse(f"I am in Batch {className}")
 
+def department(request, deptName):
+    return HttpResponse(f"I am in {deptName} department")
+
 # Create your views here.
