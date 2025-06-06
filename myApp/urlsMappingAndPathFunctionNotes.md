@@ -218,14 +218,6 @@ You **must** have the order slip to process it properly.
 
 ---
 
-### 🚨 Common Mistakes
-
-* Forgetting to **include** the app’s `urls.py` in the **main project** `urls.py`
-* Using `request.GET['key']` without checking if the key exists (use `.get()` safely!)
-* Confusing `path()` (Django URL routing) with file system paths
-
----
-
 ## 🧭 Summary Diagram
 
 ```
