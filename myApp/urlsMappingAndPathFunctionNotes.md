@@ -216,6 +216,7 @@ You **must** have the order slip to process it properly.
 | Can a view work without it?    | No — it’ll throw an error                                                         |
 | Can you name it anything else? | Technically yes (e.g., `req`), but it's **not recommended** and **bad practice**. |
 
+
 ---
 
 ## 🧭 Summary Diagram
