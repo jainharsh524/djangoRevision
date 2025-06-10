@@ -213,41 +213,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # used when running collect
    * Add this folder in `STATICFILES_DIRS`.
    * Can be useful for assets shared across multiple apps.
 
-#### 🔹 Example CSS File: `styles.css`
-
-```css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
-
-header nav a {
-    color: #fff;
-    margin-right: 1rem;
-    text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-}
-```
-
-#### 🔹 Example JavaScript File: `main.js`
-
-```javascript
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded');
-    // Add interactive behaviors here
-});
-```
-
 #### 🔹 Using Static Files in Templates
 
 In `base.html` (as shown earlier):
