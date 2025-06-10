@@ -108,45 +108,6 @@ myFirstProjectInDjango/
 * We use `{% extends 'base.html' %}` to inherit.
 * Override blocks as needed.
 
-#### 🔹 Another Child Template: `about.html`
-
-```html
-{% extends 'base.html' %}
-
-{% block title %}About Us{% endblock %}
-
-{% block content %}
-  <h1>About Us</h1>
-  <p>Information about the site or author.</p>
-{% endblock %}
-```
-
-#### 🔹 views and urls
-
-In `views.py`:
-
-```python
-from django.shortcuts import render
-
-def home(request):
-    return render(request, 'home.html')
-
-def about(request):
-    return render(request, 'about.html')
-```
-
-In `urls.py`:
-
-```python
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-]
-```
-
 ---
 
 ### 2. Static Files
