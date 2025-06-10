@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    {% include "navbar.html" %}
-</head>
-
-<body>
+{% extends 'base.html' %}
+{% block title %}Home-my Django Site{% endblock %}
+{% block content %}
     <h1 style="text-align: center; color: #2b4f32; font-family: 'Open Sans', sans-serif;">This is My First {{ lang }}
         Project</h1>
     <!-- django templating for 'conditional statements' -->
@@ -25,7 +17,4 @@
         <li style="color:#40734a;">{{ item }}</li>
         {% endfor %}
     </ul>
-
-</body>
-
-</html>
+{% endblock %}

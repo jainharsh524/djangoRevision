@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(120, 152, 153);
+}
+
+.navbar {
+    flex: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(120, 152, 153);
+    border-bottom: #1b3748;
+}
+
+a {
+    display: inline;
+    margin-left: 235px;
+    text-decoration: none;
+    color: #1b3748;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+}
+
+nav {
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
