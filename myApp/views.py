@@ -9,6 +9,9 @@ def home(request):
                }
     return render(request, 'home.html', context)
 
+def about(request):
+    return render(request, 'about.html')
+
 def test(request, id, name):
     return HttpResponse(f"Hi, I am {name} and my I'd is {id}")
 
