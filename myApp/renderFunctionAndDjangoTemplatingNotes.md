@@ -1,3 +1,5 @@
+# 🧩 Chapter 4: Django Templates — Rendering HTML Pages
+
 
 ## 🧩 What is `render()` in Django?
 
@@ -87,3 +89,109 @@ return render(request, 'home.html', {'name': 'Harsh'})
 | Supports template logic | ❌              | ✅ (supports `{% %}` and `{{ }}`) |
 | Return HTML             | ✅              | ✅                                |
 
+Great, Harsh! Let's move to **Chapter 4: Templates in Django** — one of the most important parts of building real websites.
+
+
+---
+
+## 🟢 What is a Template?
+
+A **template** is an HTML file where we embed **dynamic content** using Django's template language.
+
+Instead of sending plain text with `HttpResponse`, we render a `.html` file using `render()`.
+
+---
+
+### ✅ Basic View Without Template:
+
+```python
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Hello Harsh!")
+```
+
+---
+
+### ✅ Now Using a Template:
+
+#### Step 1: Create Template Directory
+
+Inside your app folder (e.g. `myapp/`):
+
+```
+myapp/
+├── views.py
+├── templates/
+│   └── home.html
+```
+
+> Create the `templates` folder if not already there.
+
+#### Step 2: Sample `home.html`
+
+```html
+<!-- myapp/templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Home</title>
+</head>
+<body>
+    <h1>Hello {{ name }}!</h1>
+</body>
+</html>
+```
+
+---
+
+#### Step 3: Update View with `render()`
+
+```python
+from django.shortcuts import render
+
+def home(request):
+    context = {'name': 'Harsh'}
+    return render(request, 'home.html', context)
+```
+
+---
+
+## 🛠️ Template Syntax Basics
+
+| Task              | Syntax                                    |
+| ----------------- | ----------------------------------------- |
+| Output a variable | `{{ variable }}`                          |
+| For loop          | `{% for item in list %} ... {% endfor %}` |
+| If condition      | `{% if user %} ... {% endif %}`           |
+| Comments          | `{# This is a comment #}`                 |
+| Include file      | `{% include "file.html" %}`               |
+
+---
+
+## ✅ Example: Loop in Template
+
+```html
+<ul>
+  {% for fruit in fruits %}
+    <li>{{ fruit }}</li>
+  {% endfor %}
+</ul>
+```
+
+And in your `views.py`:
+
+```python
+def home(request):
+    context = {'fruits': ['Apple', 'Banana', 'Cherry']}
+    return render(request, 'home.html', context)
+```
+
+---
+
+## 🎯 Summary
+
+* Templates help you return **HTML with dynamic data**.
+* Stored in `templates/` folder.
+* Use `render(request, 'file.html', context)` to serve them.
+* Use `{{ variable }}` and `{% %}` tags in your HTML.
