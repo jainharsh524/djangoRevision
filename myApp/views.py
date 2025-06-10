@@ -3,7 +3,9 @@ from django.http import HttpResponse
 
 def home(request):
     context = {'lang':'Django',
-               'list':['Books', 'Pens', 'Vegies']
+               'list':['Books', 'Pens', 'Vegies'],
+               'user_logged_in': True,
+               'username': 'Harsh'
                }
     return render(request, 'home.html', context)
 
