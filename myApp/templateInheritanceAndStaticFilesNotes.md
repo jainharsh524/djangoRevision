@@ -20,7 +20,7 @@ In this chapter, we’ll learn how to **reuse templates** via inheritance and ho
 2. **Define “blocks”** in `base.html` that child templates can override.
 3. **Extend `base.html`** in your page-specific templates and provide content for those blocks.
 
-#### 📁 Directory Structure Example
+#### 📁 Directory Structure Example: 
 
 ```
 myFirstProjectInDjango/
