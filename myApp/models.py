@@ -6,7 +6,7 @@ class Student_Profile(models.Model):
     roll_no = models.CharField(max_length=40)
     branch = models.CharField(max_length=40)
     marks = models.IntegerField()
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to='profile_pics')
 
     def __str__(self):
         return f"{self.name} - {self.roll_no}"
